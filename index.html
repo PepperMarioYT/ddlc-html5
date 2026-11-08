@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doki Doki Literature Club!</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="js/runtime.js"></script>
+</head>
+<body>
+  <main class="game" id="title">
+    <button id="start-ddlc" type="button" disabled>Click or press any key to start DDLC</button>
+    <section id="startup" aria-label="Game startup" hidden>
+      <div id="startup-content">
+        <h1>Loading game files</h1>
+        <progress id="startup-progress" aria-label="Game files loaded"></progress>
+        <p id="startup-status" role="status">Preparing the game…</p>
+      </div>
+    </section>
+    <section class="title-screen" aria-label="Title screen" hidden>
+      <div id="title-art" aria-hidden="true"></div>
+      <nav id="title-navigation" aria-label="Main menu"></nav>
+      <p id="load-error" role="alert" hidden></p>
+    </section>
+    <section class="opening" id="opening" aria-label="Story" tabindex="-1" hidden>
+      <div class="backdrop" id="prior-backdrop" hidden></div>
+      <div class="backdrop" id="backdrop"></div>
+      <div class="sprites" id="sprites" aria-hidden="true"></div>
+      <div id="screen-effects" aria-hidden="true"></div>
+      <div id="skip-indicator" role="status" hidden>Skipping</div>
+      <button class="menu-button back" id="back" type="button">Title Screen</button>
+      <div class="dialogue">
+        <div class="speaker" id="speaker" hidden></div>
+        <p id="line" aria-hidden="true"></p>
+        <p id="dialogue-announcement" class="visually-hidden" aria-live="polite"></p>
+        <button id="advance" type="button" aria-label="Continue"></button>
+      </div>
+      <div id="choice-panel" tabindex="-1" hidden><p id="choice-prompt" hidden></p><div id="choices"></div></div>
+      <article id="reading" tabindex="0" aria-label="Poem" hidden></article>
+      <nav id="quick-navigation" aria-label="Game menu" hidden></nav>
+    </section>
+    <button class="menu-button" id="open-files" type="button" hidden>Game Files</button>
+    <dialog id="game-files" aria-labelledby="game-files-heading">
+      <h2 id="game-files-heading">Game Files</h2>
+      <p>These are the character files used by this browser port.</p>
+      <ul id="file-list"></ul>
+      <form class="file-actions" method="dialog">
+        <button id="files-open-reset" class="menu-button" type="button">Clear local storage…</button>
+        <button class="menu-button" type="submit">Close</button>
+      </form>
+    </dialog>
+    <dialog id="menu-dialog" aria-labelledby="menu-heading">
+      <h2 id="menu-heading"></h2>
+      <nav id="menu-navigation" aria-label="Game menu" hidden></nav>
+      <div id="menu-content"></div>
+      <form class="menu-return" method="dialog"><button class="menu-button" type="submit">Return</button></form>
+    </dialog>
+    <dialog id="reset-dialog" aria-labelledby="reset-heading">
+      <form id="reset-form">
+        <h2 id="reset-heading">Are you sure?</h2>
+        <p>This clears DDLC’s browser saves, progress, virtual file changes, settings, and warning acknowledgement. You’ll start fresh.</p>
+        <label for="reset-text">Type <strong>CLEAR DDLC DATA</strong> to continue.</label>
+        <input id="reset-text" autocomplete="off" spellcheck="false" required>
+        <p id="reset-error" role="alert" hidden></p>
+        <div class="reset-actions">
+          <button id="reset-cancel" class="menu-button" type="button">Cancel</button>
+          <button id="reset-submit" class="menu-button" type="submit" disabled>Clear local storage</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="name-dialog">
+      <form method="dialog">
+        <label for="player-name">Enter your name</label>
+        <input id="player-name" required maxlength="20" autocomplete="off">
+        <button class="menu-button" type="submit" value="start">Start</button>
+        <button class="menu-button" type="submit" value="cancel" formnovalidate>Cancel</button>
+      </form>
+    </dialog>
+  </main>
+</body>
+</html>

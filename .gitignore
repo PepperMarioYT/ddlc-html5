@@ -1,0 +1,10 @@
+# Rebuilt from a local DDLC installation
+/original/
+/src/game.generated.ts
+/js/
+
+# Local dependencies and caches
+/node_modules/
+__pycache__/
+*.py[cod]
+.DS_Store
