@@ -3,6 +3,7 @@
     "target": "ES2022",
     "module": "none",
     "strict": true,
+    "rootDir": "./src",
     "outFile": "js/runtime.js",
     "ignoreDeprecations": "6.0",
     "noEmitOnError": true
